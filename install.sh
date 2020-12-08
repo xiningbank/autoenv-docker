@@ -14,7 +14,9 @@ cd $baseDir"/dockerlemp"
 cp .env.example .env
 
 apt-get install curl -y
-curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# for other versions, see: https://github.com/docker/compose/releases
+dcVersion="1.27.4"
+curl -L "https://github.com/docker/compose/releases/download/"$dcVersion"/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 apt-get install docker.io -y
