@@ -20,7 +20,7 @@ curl -L "https://github.com/docker/compose/releases/download/"$dcVersion"/docker
 chmod +x /usr/local/bin/docker-compose
 
 apt-get install docker.io -y
-cat daemon.json >> /etc/docker/daemon.json
+cat ../daemon.json >> /etc/docker/daemon.json
 systemctl restart docker
 
 docker-compose up -d --build
