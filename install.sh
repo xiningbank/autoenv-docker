@@ -19,7 +19,7 @@ chmod +x /usr/local/bin/docker-compose
 
 apt-get update
 apt-get install docker.io -y
-cd $baseDir"/autoenv"
+cd $(pwd)"/autoenv"
 cat daemon.json >> /etc/docker/daemon.json
 systemctl restart docker
 
