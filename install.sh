@@ -21,7 +21,7 @@ baseDir="/var/www"
 mkdir -p $baseDir
 cd $baseDir
 
-git clone -b develop git@github.com:xiningbank/dockerlemp.git
+git clone -b develop https://github.com/xiningbank/dockerlemp.git
 cd $baseDir"/dockerlemp"
 cp .env.example .env
 
