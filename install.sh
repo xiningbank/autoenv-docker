@@ -8,6 +8,7 @@ cat daemon.json >> /etc/docker/daemon.json
 systemctl restart docker
 
 cat .bashrc >> ~/.bashrc
+source ~/.bashrc
 
 # install docker-compose
 apt-get install curl -y
