@@ -8,7 +8,7 @@ apt-get update
 
 # install docker
 apt-get install docker.io -y
-cat daemon.json >> /etc/docker/daemon.json
+cat daemon.conf >> /etc/docker/daemon.conf
 systemctl restart docker
 
 # add alias as command for docker
