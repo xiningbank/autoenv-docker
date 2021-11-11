@@ -4,10 +4,10 @@ cp .env.example .env
 . .env
 
 # update system
-apt-get update
+apt update
 
 # install docker
-apt-get install docker.io -y
+apt install docker.io -y
 cat daemon.conf >> /etc/docker/daemon.conf
 systemctl restart docker
 
@@ -17,7 +17,7 @@ source ~/.bashrc
 
 # install docker-compose
 # for other versions, see: https://github.com/docker/compose/releases
-apt-get install curl -y
+apt install curl -y
 curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
