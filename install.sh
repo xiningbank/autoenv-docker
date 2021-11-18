@@ -1,5 +1,5 @@
 #!/bin/bash
-# load configrations
+# load configurations
 cp .env.example .env
 . .env
 
