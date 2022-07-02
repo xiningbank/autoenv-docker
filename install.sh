@@ -1,14 +1,14 @@
 #!/bin/bash
-# load configurations
-cp .env.example .env
-. .env
 
 # update system
-apt update
+sudo apt-get update
+apt-get install curl -y
 
-# install docker
-apt install docker.io -y
-cat daemon.conf >> /etc/docker/daemon.conf
+# install docker on ubuntu, see: https://docs.docker.com/engine/install/ubuntu
+apt-get install docker.io -y
+
+# add docker repository for China
+cat daemon.json >> /etc/docker/daemon.json
 systemctl restart docker
 
 # add alias as command for docker
@@ -17,9 +17,13 @@ source ~/.bashrc
 
 # install docker-compose
 # for other versions, see: https://github.com/docker/compose/releases
-apt install curl -y
+# set configurations
+cp .env.example .env
+. .env
 curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
+
+exit 0
 
 # download docker LEMP
 # for other git branch, see: https://github.com/xiningbank/dockerlemp
