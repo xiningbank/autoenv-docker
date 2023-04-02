@@ -8,7 +8,7 @@ apt-get install curl -y
 apt-get install docker.io -y
 
 # add docker repository for China
-cat daemon.json >> /etc/docker/daemon.json
+# cat daemon.json >> /etc/docker/daemon.json
 systemctl restart docker
 
 # add alias as command for docker
