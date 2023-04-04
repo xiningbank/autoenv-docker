@@ -1,6 +1,6 @@
 function dssh(){
-	docker exec -it $1 /bin/bash
+	sudo docker exec -it $1 /bin/bash
 }
 function dassh(){
-	docker exec -it $1 sh
+	sudo docker exec -it $1 sh
 }

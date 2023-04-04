@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# add alias as command for accessing docker container by current user.
+cat .bashrc >> ~/.bashrc
+source ~/.bashrc
+
 # update system
 sudo apt-get update
 apt-get install curl -y
@@ -10,10 +14,6 @@ apt-get install docker.io -y
 # add docker repository for China
 # cat daemon.json >> /etc/docker/daemon.json
 systemctl restart docker
-
-# add alias as command for docker
-cat .bashrc >> ~/.bashrc
-source ~/.bashrc
 
 # install docker-compose
 # for other versions, see: https://github.com/docker/compose/releases
