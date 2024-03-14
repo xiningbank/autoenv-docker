@@ -18,7 +18,7 @@ systemctl restart docker
 # install docker-compose
 # for other versions, see: https://github.com/docker/compose/releases
 # set configurations
-if [! -f .env]; then
+if [ ! -f .env ]; then
   cp .env.example .env
 fi
 . .env
