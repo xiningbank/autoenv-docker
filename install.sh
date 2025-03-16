@@ -2,7 +2,12 @@
 
 # update system
 sudo apt-get update
-apt-get install curl -y
+
+# check if cURL is installed
+if ! command -v curl > /dev/null 2>&1; then
+  # install cURL
+  apt-get install curl -y
+fi
 
 # install docker on ubuntu, see: https://docs.docker.com/engine/install/ubuntu
 apt-get install docker.io -y
