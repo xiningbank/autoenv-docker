@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# customized function, to judge if the current user is root, if yes, ignore sudo command.
+sudo() {
+    if [ "$(whoami)" = "root" ]; then
+        # root user: execute directly.
+        "$@"
+    else
+        # non-root user: use sudo.
+        command sudo "$@"
+    fi
+}
+
 # update system
 sudo apt-get update
 
