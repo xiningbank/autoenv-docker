@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# customized function, to judge if the current user has root privilege, if yes, ignore sudo command.
+sudo() {
+    if [ "$EUID" -eq 0 ]; then
+        # user with root privilege: execute directly.
+        "$@"
+    else
+        # non-root user: use sudo.
+        command sudo "$@"
+    fi
+}
+
 # update system
 sudo apt-get update
 
